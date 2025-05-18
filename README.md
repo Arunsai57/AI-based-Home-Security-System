@@ -54,7 +54,7 @@ An intelligent surveillance system that combines real-time **facial recognition*
 
 ## 💻 System Architect
 
-![system-architect](https://github.com/user-attachments/assets/b2d9e7ff-88c0-4595-b830-497916450f0b)
+![system-architect](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/system_architect.png)
 
 
 ---
@@ -89,25 +89,25 @@ Starts on-demand (not 24/7), maintaining user privacy and resource efficiency.
 ![index](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/index.png)
 
 
-![login](https://github.com/user-attachments/assets/cbf77c9f-f828-4b49-89b3-e80423c2ae36)
+![login](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/login.png)
 
 
-![home](https://github.com/user-attachments/assets/30785a55-a04a-4724-8ef5-c62ac10be525)
+![home](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/home.png)
 
 
-![manage-persons](https://github.com/user-attachments/assets/347736f8-c01b-43dc-9f1e-4014210e9571)
+![manage-persons](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/manage_persons.png)
 
 
-![dashboard](https://github.com/user-attachments/assets/f2e706c7-0c65-433a-b67e-82c4b6c72551)
+![dashboard](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/dashboard.png)
 
 
-![object-logs](https://github.com/user-attachments/assets/d694a34f-5150-4588-a2e2-a624fb30526a)
+![object-logs](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/object_detection.png)
 
 
-![alert-unknown](https://github.com/user-attachments/assets/6e7b062e-c7f7-4bcd-a584-4560acba6d52)
+![alert-unknown](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/alert.png)
 
 
-![firebase-realtime](https://github.com/user-attachments/assets/2285dd1f-657f-4325-b3b9-64f648283fc2)
+![firebase-realtime](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/firebase_console.png)
 
 
 ---
