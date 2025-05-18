@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Live Surveillance Feed - Secure Home{% endblock %}
+
+{% block extra_head %}
+<style>
+  body {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    color: #00ffe1;
+    font-family: 'Share Tech Mono', monospace;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    color: #00ffe1;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .live-feed {
+    border: 5px solid #00ffe1;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ffe1;
+    margin-top: 20px;
+  }
+
+  .btn-back {
+    background-color: #00ffe1;
+    color: #0a0a0a;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+
+  .btn-back:hover {
+    background-color: #0a0a0a;
+    color: #00ffe1;
+    box-shadow: 0 0 15px #00ffe1;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Live Surveillance Feed</h1>
+<img src="{{ url_for('video_feed') }}" class="live-feed" width="800" height="600">
+<br>
+<a href="/dashboard" class="btn-back">⬅️ Back to Dashboard</a>
+{% endblock %}

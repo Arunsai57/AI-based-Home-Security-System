@@ -1,0 +1,121 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Secure Home{% endblock %}
+
+{% block extra_head %}
+<script>
+  setTimeout(function() {
+    location.reload();
+  }, 20000); // 20 seconds
+</script>
+<style>
+  h2 {
+    color: #00ffe1;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  h2:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ffe1;
+  }
+
+  .btn {
+    border: none;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(100, 217, 255, 0.5);
+  }
+
+  .btn-primary {
+    background-color: #b2fefa;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: #559dff;
+  }
+
+  table {
+    background-color: #111729;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  th {
+    background-color: #1c2331 !important;
+    color: #ffffff;
+  }
+
+  td {
+    color: #d1d9e6;
+    vertical-align: middle;
+  }
+
+  img {
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<div class="d-flex justify-content-center mb-4 flex-wrap gap-2">
+  <a href="/start_surveillance" class="btn btn-success me-2">▶️ Start Surveillance</a>
+  <a href="/stop_surveillance" class="btn btn-danger me-2">⛔ Stop Surveillance</a>
+  <a href="/live_feed" class="btn btn-primary me-2">🎥 Live Feed</a>
+  {% if not full %}
+    <a href="/full_history" class="btn btn-warning">📜 View Full History</a>
+  {% else %}
+    <a href="/dashboard" class="btn btn-info">⬅️ Back to Recent</a>
+  {% endif %}
+  <a href="/object_logs" class="btn btn-secondary">📦 View Object Detections</a>
+  <a href="/alerts" class="btn btn-danger">🚨 View Critical Alerts</a>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-hover shadow rounded">
+    <thead class="table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Timestamp</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for log in logs %}
+      <tr class="{% if log[1] == 'UNKNOWN' %}table-danger{% else %}table-success{% endif %}">
+        <td>{{ log[0] }}</td>
+        <td>{{ log[1] }}</td>
+        <td>{{ log[2] }}</td>
+        <td>
+          {% if log[3] %}
+            <img src="{{ url_for('static', filename=( 'unknown_faces/' if log[1]=='UNKNOWN' else 'known_logs/' ) + log[3]) }}" width="100" loading="lazy">
+          {% else %}
+            -
+          {% endif %}
+          <form method="POST" action="/delete_log" style="display:inline;">
+            <input type="hidden" name="timestamp" value="{{ log[2] }}">
+            <button type="submit" class="btn btn-sm btn-outline-danger ms-2">🗑️</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

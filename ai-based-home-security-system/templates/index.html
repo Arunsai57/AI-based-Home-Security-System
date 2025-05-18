@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Security</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      color: #00ffe1;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      color: #00ffe1;
+      text-shadow: 0 0 8px #00ffe1;
+    }
+
+    nav .logo:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #00ffe1;
+    }
+    nav .links a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #00ffe1;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    nav .links a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #00ffe1;
+    }
+
+    header {
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 0 0 15px #00ffe1;
+      animation: glitch 2s infinite alternate;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #b2fefa;
+      max-width: 600px;
+      margin: 1rem auto 0;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 0 0 5px #00ffe1, 2px 2px #ff00c8; }
+      100% { text-shadow: -2px -2px #00ffe1, 2px 2px #00ffe1; }
+    }
+
+    .button-area {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .button-area a {
+      background: #00ffe1;
+      color: #0a0a0a;
+      padding: 1rem 2rem;
+      margin: 0 1rem;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 15px #00ffe1;
+      transition: 0.3s;
+    }
+
+    .button-area a:hover {
+      background: #0a0a0a;
+      color: #00ffe1;
+      box-shadow: 0 0 25px #00ffe1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">SECURE-HOME</div>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/login">Dashboard</a>
+      <a href="/login">Manage Persons</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Welcome to SECURE-HOME</h1>
+    <p>AI-Powered Home Security System with Real-Time Face Recognition and Alerts.</p>
+    <div class="button-area">
+      <a href="/login">Admin Login</a>
+    </div>
+  </header>
+</body>
+</html>

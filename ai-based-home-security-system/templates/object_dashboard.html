@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}Object Logs - Secure Home{% endblock %}
+
+{% block extra_head %}
+<script>
+  setTimeout(function() {
+    location.reload();
+  }, 30000); // 30 seconds
+</script>
+<style>
+  h2 {
+    color: #fdd835;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  table {
+    background-color: #111729;
+  }
+  th {
+    background-color: #1c2331 !important;
+  }
+  td {
+    color: #d1d9e6;
+    vertical-align: middle;
+  }
+  img {
+    border-radius: 10px;
+    object-fit: cover;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<h2>📦 Object Detection Logs</h2>
+
+<div class="mb-3 text-center">
+  <a href="/dashboard" class="btn btn-info">⬅️ Back to Face Logs</a>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-hover shadow rounded">
+    <thead class="table-dark">
+      <tr>
+        <th>Status</th>
+        <th>Timestamp</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for log in logs %}
+      <tr class="
+        {% if log[1] == 'WEAPON' %}
+          table-danger
+        {% elif log[1] == 'VEHICLE' %}
+          table-warning
+        {% else %}
+          table-primary
+        {% endif %}
+      ">
+        <td>{{ log[1] }}</td>
+        <td>{{ log[2] }}</td>
+        <td>
+          {% if log[3] %}
+            <img src="{{ url_for('static', filename='object_logs/' + log[1]|lower + '/' + log[3]) }}" width="100" loading="lazy">
+          {% else %}
+            -
+          {% endif %}
+          <form method="POST" action="/delete_log" style="display:inline;">
+            <input type="hidden" name="timestamp" value="{{ log[2] }}">
+            <button type="submit" class="btn btn-sm btn-outline-danger ms-2">🗑️</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
