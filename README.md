@@ -9,18 +9,18 @@ An intelligent surveillance system that combines real-time **facial recognition*
 ---
 
 ## 📌 Table of Contents
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [System Architecture](#system-architecture)
-- [How It Works](#how-it-works)
-- [Screenshots](#screenshots)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Challenges Faced](#challenges-faced)
-- [Simulation & Results](#simulation--results)
-- [Hardware Implementation](#hardware-implementation)
-- [Future Scope](#future-scope)
-- [License](#license)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [System Architecture](#-system-architecture)
+- [How It Works](#-how-it-works)
+- [Screenshots](#-screenshots)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Challenges Faced](#-challenges-faced)
+- [Simulation & Results](#-simulation--results)
+- [Hardware Implementation](#-hardware-implementation)
+- [Future Scope](#-future-scope)
+- [License](#-license)
 
 ---
 
@@ -30,7 +30,7 @@ An intelligent surveillance system that combines real-time **facial recognition*
 - 📦 Object detection using MobileNet SSD or YOLOv5
 - 💾 Saves frames for all detections with timestamped logs (faces + objects)
 - ☁️ Firebase Realtime Database integration for metadata logging
-- 🧭 Dashboard UI with separate views for face log, objects logs ,alert logs and full history , user/admin can manage who can have access by managing persons through dashboard.
+- 🧭 Dashboard UI with separate views for face logs, object logs, alert logs, and full history. Admins can manage access by adding or removing individuals via the dashboard.
 - 📹 Live feed control - system doesn't record continuously; users decide when to start surveillance
 - 🛠️ Ready for ESP32 and weapon detection integration with Smart Lock integration
 
@@ -54,7 +54,7 @@ An intelligent surveillance system that combines real-time **facial recognition*
 
 ## 💻 System Architect
 
-![image](https://github.com/user-attachments/assets/b2d9e7ff-88c0-4595-b830-497916450f0b)
+![system-architect](https://github.com/user-attachments/assets/b2d9e7ff-88c0-4595-b830-497916450f0b)
 
 
 ---
@@ -86,25 +86,28 @@ Starts on-demand (not 24/7), maintaining user privacy and resource efficiency.
 
 ## 📷 Screenshots
 
-![image](https://github.com/user-attachments/assets/245f1bcd-d846-4370-8006-998c3ff6e38a)
+![index](https://github.com/user-attachments/assets/245f1bcd-d846-4370-8006-998c3ff6e38a)
 
 
-![image](https://github.com/user-attachments/assets/cbf77c9f-f828-4b49-89b3-e80423c2ae36)
+![login](https://github.com/user-attachments/assets/cbf77c9f-f828-4b49-89b3-e80423c2ae36)
 
 
-![image](https://github.com/user-attachments/assets/30785a55-a04a-4724-8ef5-c62ac10be525)
+![home](https://github.com/user-attachments/assets/30785a55-a04a-4724-8ef5-c62ac10be525)
 
 
-![image](https://github.com/user-attachments/assets/347736f8-c01b-43dc-9f1e-4014210e9571)
+![manage-persons](https://github.com/user-attachments/assets/347736f8-c01b-43dc-9f1e-4014210e9571)
 
 
-![image](https://github.com/user-attachments/assets/3514a5de-4f4c-402c-a55a-6ba6765e381d)
+![dashboard](https://github.com/user-attachments/assets/f2e706c7-0c65-433a-b67e-82c4b6c72551)
 
 
-![image](https://github.com/user-attachments/assets/6e7b062e-c7f7-4bcd-a584-4560acba6d52)
+![object-logs](https://github.com/user-attachments/assets/d694a34f-5150-4588-a2e2-a624fb30526a)
 
 
-![image](https://github.com/user-attachments/assets/2285dd1f-657f-4325-b3b9-64f648283fc2)
+![alert-unknown](https://github.com/user-attachments/assets/6e7b062e-c7f7-4bcd-a584-4560acba6d52)
+
+
+![firebase-realtime](https://github.com/user-attachments/assets/2285dd1f-657f-4325-b3b9-64f648283fc2)
 
 
 ---
@@ -113,23 +116,31 @@ Starts on-demand (not 24/7), maintaining user privacy and resource efficiency.
 
 Install the necessary Python packages:
 
-pip install opencv-python face_recognition firebase-admin twilio numpy imutils
+     pip install opencv-python face_recognition firebase-admin twilio numpy 
+     imutils
+
 
 ---
 
 ## 🚀 Installation
 
 **Clone the repo:**
-git clone https://github.com/yourusername/ai-home-security.git
-cd ai-home-security
 
-**Install dependencies:**
-pip install -r requirements.txt
+          git clone https://github.com/2200032091/AI-based-Home-Security-System.git
+          cd ai-based-home-security-system
+          pip install -r requirements.txt
+
+    
+    
 Add your Firebase credentials (firebase_credentials.json).
+    
 Add your Twilio SID, Auth token, and number in sms_alert.py.
 
+
 **Run:**
-python main.py
+
+    python main.py
+
 
 ---
 
@@ -154,7 +165,7 @@ Concurrent writes from multiple detections sometimes caused malformed data. Solv
 - Average face recognition accuracy > 90%
 - Object detection identifies common items with confidence > 60%.
 - SMS alert triggers in <3 seconds for unknown intrusions.
-- Frames of each detection saved in organized folders.
+- Each detection frame is saved in organized folders.
 - Firebase logs update in real time and are displayed on the dashboard.
 - Logs categorized cleanly in dashboard
 
@@ -164,10 +175,13 @@ Concurrent writes from multiple detections sometimes caused malformed data. Solv
 Though current tests are on laptop/webcam, future-ready for hardware deployment:
 
 **Component	Purpose	Status:**
-- ESP32-CAM	   - Live feed source, remote usage	     🔜 Planned
-- LCD Display	 - Show logs or status	               🔜 Optional
-- Raspberry Pi - Replace PC for real-time detection	 🔜 Future
-- Webcam	     - Current input device	               ✅ In Use
+  | Component       | Purpose                          | Status     |
+|----------------|----------------------------------|------------|
+| ESP32-CAM      | Live feed source, remote usage   | 🔜 Planned |
+| LCD Display    | Show logs or status              | 🔜 Optional|
+| Raspberry Pi   | Replace PC for real-time detection | 🔜 Future  |
+| Webcam         | Current input device             | ✅ In Use  |
+
 
 ---
 
@@ -184,10 +198,13 @@ Though current tests are on laptop/webcam, future-ready for hardware deployment:
 ## 📄 License
 This project is **not open-source** in the traditional sense.  
 It is a **private research prototype** intended solely for:
-- Hackathon evaluation
-- Academic demonstration
-- Personal learning
-- **No part of this codebase may be reused, copied, or distributed** without **explicit permission** from the author.
+
+  - Hackathon evaluation
+  - Academic demonstration
+  - Personal learning
+
+❗ This project is **not open source**.  
+Do not copy, distribute, or reuse any part of this codebase without explicit permission from the author.
 
 ---
 
