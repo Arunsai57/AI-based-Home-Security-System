@@ -86,7 +86,7 @@ Starts on-demand (not 24/7), maintaining user privacy and resource efficiency.
 
 ## 📷 Screenshots
 
-![index](https://github.com/user-attachments/assets/245f1bcd-d846-4370-8006-998c3ff6e38a)
+![index](https://github.com/2200032091/AI-based-Home-Security-System/blob/main/static/index.png)
 
 
 ![login](https://github.com/user-attachments/assets/cbf77c9f-f828-4b49-89b3-e80423c2ae36)
