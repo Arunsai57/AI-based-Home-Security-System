@@ -214,4 +214,7 @@ Do not copy, distribute, or reuse any part of this codebase without explicit per
 
 
 
-© 2025 Harika. All rights reserved.
+
+<div align="center">
+  © 2025 Harika. All rights reserved.
+</div>
