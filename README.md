@@ -11,7 +11,7 @@ An intelligent surveillance system that combines real-time **facial recognition*
 ## 📌 Table of Contents
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
-- [System Architecture](#-system-architecture)
+- [System Architecture](#-system-architect)
 - [How It Works](#-how-it-works)
 - [Screenshots](#-screenshots)
 - [Requirements](#-requirements)
