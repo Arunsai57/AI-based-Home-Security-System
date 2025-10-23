@@ -1,4 +1,4 @@
->  **Research Prototype**  
+>  **Research Prototype**
 > This repository contains unpublished work under active research. Please do not copy, fork, or share.
 
 #  AI-Powered Home Security System with Facial Recognition
